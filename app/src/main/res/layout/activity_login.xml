@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C5DDF6"
     tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="137dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#000000"
         android:text="JSLEEP"
+        android:textColorHighlight="#2A90E1"
+        android:textIsSelectable="true"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,8 +72,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.577"
-        tools:visibility="visible" />
+        app:layout_constraintVertical_bias="0.577" />
 
     <TextView
         android:id="@+id/textView2"
