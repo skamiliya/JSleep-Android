@@ -7,11 +7,12 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="collapseActionView|always"/>
 
-    <item android:id="@+id/person_button"
+    <item
+        android:id="@+id/person_button"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="Person Button"
+        android:title="Search Button"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="collapseActionView|always"/>
+        app:showAsAction="collapseActionView|always" />
 
     <item android:id="@+id/add_button"
         android:icon="@drawable/ic_baseline_add_box_24"
