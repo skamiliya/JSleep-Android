@@ -1,4 +1,4 @@
-package model;
+package com.ShabrinaJSleepDN.jsleep_android.model;
 
 public enum Facility {
     SwimmingPool,
