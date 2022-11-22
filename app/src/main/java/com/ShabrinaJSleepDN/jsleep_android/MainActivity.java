@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.ShabrinaJSleepDN.jsleep_android.model.Account;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -22,6 +23,8 @@ import java.util.Collections;
 import com.ShabrinaJSleepDN.jsleep_android.model.Room;
 
 public class MainActivity extends AppCompatActivity {
+    public static Account cookies;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
