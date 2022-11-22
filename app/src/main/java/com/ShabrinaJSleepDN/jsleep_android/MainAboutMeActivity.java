@@ -11,13 +11,24 @@ public class MainAboutMeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_about_me);
-    }
+
         Account sessionAccount = MainActivity.cookies;
+
         TextView nameAccount = findViewById(R.id.textViewNameIsi);
+
         TextView emailAccount = findViewById(R.id.textviewEmail);
+
         TextView balanceAccount = findViewById(R.id.textViewBalanceIsi);
-        
+
+        nameAccount.setText(sessionAccount.name);
+
+        emailAccount.setText(sessionAccount.email);
+
+        balanceAccount.setText(Double.toString(sessionAccount.balance));
+
 
     }
+}
