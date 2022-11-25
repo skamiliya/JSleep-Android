@@ -17,7 +17,7 @@ import retrofit2.http.Query;
 
 public interface BaseApiService {
 
-    @GET("account/register")
+    @POST("account/register")
     Call<Account> register (@Query("name") String name,
                             @Query("email") String email,
                             @Query("password") String password);
@@ -28,6 +28,8 @@ public interface BaseApiService {
     @POST("account/login")
     Call<Account> login(@Query("email") String email,
                         @Query("password") String password);
+
+    Call<Renter> registerRenter(int id, String username, String address, String phone);
 }
 
 

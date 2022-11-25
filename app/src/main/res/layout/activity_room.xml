@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="196dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="108dp"
+        android:text="Create Room"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Facility"
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="21dp"
+        android:text="Facility"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/CITY"
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="1dp"
+        android:text="City"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/TYPEBED"
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="21dp"
+        android:text="Bedtype"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CITY" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="200dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        app:layout_constraintVertical_bias="0.026">
+
+        <EditText
+            android:id="@+id/nameCreateRoom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="2dp"
+            android:hint="Name" />
+
+        <EditText
+            android:id="@+id/PriceCreateRoom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="2dp"
+            android:hint="Price" />
+
+        <EditText
+            android:id="@+id/AddressCreateRoom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="2dp"
+            android:hint="Address" />
+
+        <EditText
+            android:id="@+id/SizeCreateRoom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="2dp"
+            android:hint="Size" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="409dp"
+        android:layout_height="189dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/CITY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Facility">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+
+            app:layout_constraintBottom_toTopOf="@+id/CITY"
+            app:layout_constraintEnd_toEndOf="1dp"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Facility"
+            app:layout_constraintVertical_bias="0.539">
+
+            <CheckBox
+                android:id="@+id/AC"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="AC"
+                android:textSize="24dp" />
+
+            <CheckBox
+                android:id="@+id/REFRIGERATOR"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="Refrigerator"
+                android:textSize="24dp" />
+
+            <CheckBox
+                android:id="@+id/WIFI"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="WiFi"
+                android:textSize="24dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+
+            app:layout_constraintBottom_toTopOf="@+id/CITY"
+            app:layout_constraintEnd_toEndOf="1dp"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Facility"
+            app:layout_constraintVertical_bias="0.539">
+
+            <CheckBox
+                android:id="@+id/BATHUB"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="Bathtub"
+                android:textSize="24dp" />
+
+            <CheckBox
+                android:id="@+id/BALCONY"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="Balcony"
+                android:textSize="24dp" />
+
+            <CheckBox
+                android:id="@+id/RESTO"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="Restaurant"
+                android:textSize="24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+
+            app:layout_constraintBottom_toTopOf="@+id/CITY"
+            app:layout_constraintEnd_toEndOf="1dp"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Facility"
+            app:layout_constraintVertical_bias="0.539">
+
+            <CheckBox
+                android:id="@+id/POOL"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="Swimming Pool"
+                android:textSize="24dp" />
+
+            <CheckBox
+                android:id="@+id/FITNESS"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="Fitness Center"
+                android:textSize="24dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/BED"
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <Spinner
+        android:id="@+id/SPINCIT"
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BED" />
+
+    <Button
+        android:id="@+id/CREATEBUTTON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="212dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="16dp"
+        android:text="Create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/CANCELBUTTON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="16dp"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </Button>
+</androidx.constraintlayout.widget.ConstraintLayout>

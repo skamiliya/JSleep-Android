@@ -57,7 +57,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     protected Account requestLogin(){
-        mApiService.login(username.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
+        mApiService.login(
+                username.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
@@ -71,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(go);
                     Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();
                 }
-                System.out.println("test");
+
             }
 
             @Override
@@ -86,9 +87,11 @@ public class LoginActivity extends AppCompatActivity {
         return null;
     }
     protected Account requestAccount(){
-        mApiService.getAccount(0).enqueue(new Callback<Account>() {
+        mApiService.getAccount(0).
+                enqueue(new Callback<Account>() {
             @Override
-            public void onResponse(Call<Account> call, Response<Account> response) {
+            public void onResponse(Call<Account> call,
+                                   Response<Account> response) {
                 if(response.isSuccessful()){
                     Account account;
                     account = response.body();
@@ -97,10 +100,13 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Account> call, Throwable t){
+            public void onFailure(Call<Account> call, Throwable t)
+            {
 
                 t.printStackTrace();
-                Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();System.out.println("test");
+                Toast.makeText(mContext,
+                        "no Account id=0",
+                        Toast.LENGTH_SHORT).show();System.out.println("test");
             }
         });
         return null;

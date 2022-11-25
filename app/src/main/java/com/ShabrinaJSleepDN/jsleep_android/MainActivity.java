@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.ShabrinaJSleepDN.jsleep_android.model.Account;
+import com.ShabrinaJSleepDN.jsleep_android.model.Renter;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -23,9 +25,12 @@ import java.util.Collections;
 import com.ShabrinaJSleepDN.jsleep_android.model.Room;
 
 import okhttp3.ResponseBody;
+import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
     public static Account cookies;
+    public static Account loggedAccount;
+    public static Object logAcc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +52,16 @@ public class MainActivity extends AppCompatActivity {
             Collections.addAll(ListRoom, buff);
 
         } catch (IOException e) {
+
             e.printStackTrace();
         }
         for (Room r : ListRoom) {
 
             listId.add(r.name);
         }
-        ArrayAdapter<String> adapt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listId);
+        ArrayAdapter<String> adapt = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                listId);
 
         ListView listView = findViewById(R.id.ListViewId);
 
@@ -61,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
 
         return
@@ -93,8 +100,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.person_button:
 
                 Intent inte = new Intent(MainActivity.this, MainAboutMeActivity.class);
@@ -109,6 +115,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
-

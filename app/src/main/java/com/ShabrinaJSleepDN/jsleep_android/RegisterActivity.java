@@ -25,10 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
     Context mContext;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_register);
 
         mApiService = UtilsApi.getApiService();
@@ -43,35 +41,41 @@ public class RegisterActivity extends AppCompatActivity {
 
         Button register = findViewById(R.id.button2);
 
-        register.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener()
+        {
             @Override
+
             public void onClick(View view)
             {
                 requestRegister();
-
-                System.out.println("test");
             }
-        }
-        );
+        });
 
 
     }
 
-    protected Account requestRegister(){
-        mApiService.register(username.getText().toString(),email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
-
+    protected Account requestRegister()
+    {
+        mApiService.register(username.getText().toString(),email.getText().toString(),
+                password.getText().toString()).enqueue
+                (new Callback<Account>()
+                {
             @Override
-            public void onResponse(Call<Account> call, Response<Account> response)
+            public void onResponse(Call<Account> call,
+                                   Response<Account> response)
             {
                 if(response.isSuccessful())
                 {
+
                     MainActivity.cookies = response.body();
 
                     Intent go = new Intent(RegisterActivity.this, MainActivity.class);
 
                     startActivity(go);
 
-                    Toast.makeText(mContext, "Succeed Register", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext,
+                            "Register Succeed",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -80,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
             {
                 System.out.println(t.toString());
 
-                Toast.makeText(mContext, "Account Already Used, try unique email and name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Email and Username already use, Please choose another", Toast.LENGTH_SHORT).show();
             }
         });
 
