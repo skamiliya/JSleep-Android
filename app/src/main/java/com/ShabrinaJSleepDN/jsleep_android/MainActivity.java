@@ -9,10 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.ShabrinaJSleepDN.jsleep_android.model.Account;
-import com.ShabrinaJSleepDN.jsleep_android.model.Renter;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -23,9 +21,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import com.ShabrinaJSleepDN.jsleep_android.model.Room;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
     public static Account cookies;
@@ -104,14 +99,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.person_button:
 
                 Intent inte = new Intent(MainActivity.this, MainAboutMeActivity.class);
-
                 startActivity(inte);
-
-                return
-                        true;
+                return true;
             default:
-                return
-                        super.onOptionsItemSelected(item);
+                return super.onOptionsItemSelected(item);
         }
     }
 }

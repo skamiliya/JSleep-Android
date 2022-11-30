@@ -29,7 +29,12 @@ public interface BaseApiService {
     Call<Account> login(@Query("email") String email,
                         @Query("password") String password);
 
-    Call<Renter> registerRenter(int id, String username, String address, String phone);
+
+    @POST("account/{id}/registerStore")
+    Call<Renter> registerRenter(@Path("id") int id,
+                                @Query("username") String username,
+                                @Query("address") String address,
+                                @Query("phoneNumber") String phoneNumber);
 }
 
 
