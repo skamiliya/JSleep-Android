@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="188dp"
         android:hint="Name"
+        android:textColor="#2B5287"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +26,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="188dp"
         android:hint="Address"
+        android:textColor="#2B5287"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NamePerson" />
@@ -71,7 +73,7 @@
         android:id="@+id/cb_swimmingPool"
         android:layout_width="133dp"
         android:layout_height="40dp"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="68dp"
         android:buttonTint="#2B5288"
         android:checked="false"
         android:enabled="false"
@@ -85,7 +87,7 @@
         android:id="@+id/cb_refrigerator"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="68dp"
         android:buttonTint="#2B5288"
         android:checked="false"
         android:enabled="false"
@@ -99,7 +101,7 @@
         android:id="@+id/cb_AC"
         android:layout_width="64dp"
         android:layout_height="40dp"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="68dp"
         android:buttonTint="#2B5288"
         android:checked="false"
         android:enabled="false"
@@ -113,7 +115,7 @@
         android:id="@+id/cb_wifi"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="68dp"
         android:layout_marginBottom="144dp"
         android:buttonTint="#2B5288"
         android:checked="false"
@@ -128,7 +130,7 @@
         android:id="@+id/cb_restaurant"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="84dp"
         android:buttonTint="#2B5288"
         android:checked="false"
         android:enabled="false"
@@ -142,7 +144,7 @@
         android:id="@+id/cb_bathtub"
         android:layout_width="88dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="96dp"
         android:layout_marginBottom="144dp"
         android:buttonTint="#2B5288"
         android:checked="false"
@@ -236,5 +238,58 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/Receipt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Receipt"
+        android:textColor="#2B5287"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressPerson" />
+
+    <TextView
+        android:id="@+id/BedType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bed Type"
+        android:textColor="#2B5287"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressPerson" />
+
+    <TextView
+        android:id="@+id/PriceJsleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="236dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Price"
+        android:textColor="#2B5287"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressPerson" />
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Size"
+        android:textColor="#2B5287"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressPerson" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

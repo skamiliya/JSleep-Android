@@ -127,4 +127,74 @@
 
     </TextView>
 
+    <TextView
+        android:id="@+id/MakeBooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Make Booking"
+        android:textColor="#2B5287"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/To"
+        android:layout_width="149dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="332dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="To"
+        android:textColor="#2B5287"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PriceHotel"
+        android:layout_width="149dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="424dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Price"
+        android:textColor="#2B5287"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/From"
+        android:layout_width="149dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="332dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="From"
+        android:textColor="#2B5287"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/yourBalance"
+        android:layout_width="149dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="220dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Your Balance"
+        android:textColor="#2B5287"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

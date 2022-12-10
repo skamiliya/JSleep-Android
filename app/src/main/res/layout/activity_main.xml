@@ -23,7 +23,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="409dp"
         android:layout_height="729dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="6dp"
         android:orientation="horizontal"
         android:paddingTop="15dp"
         app:layout_constraintBottom_toBottomOf="parent"

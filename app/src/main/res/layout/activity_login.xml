@@ -12,11 +12,12 @@
         android:layout_width="173dp"
         android:layout_height="118dp"
         android:backgroundTint="#2B5288"
+        android:fontFamily="sans-serif-medium"
         android:text="Welcome to JSleep!"
         android:textColor="#2B5288"
         android:textColorHighlight="#2A90E1"
         android:textIsSelectable="true"
-        android:textSize="34sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,6 +110,19 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginBottom="33dp"
+        android:text="Login"
+        android:textColor="#2B5288"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Username"
         app:layout_constraintStart_toStartOf="parent" />
 
 

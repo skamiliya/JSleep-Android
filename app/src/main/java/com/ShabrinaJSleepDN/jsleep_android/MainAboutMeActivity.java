@@ -33,7 +33,7 @@ public class MainAboutMeActivity extends AppCompatActivity {
     EditText nameInput, addressInput, phoneNumberInput;
     CardView registerCardView,dataCardView;
     Button topUpInput;
-//    Handler mHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,25 +46,25 @@ public class MainAboutMeActivity extends AppCompatActivity {
         catch (NullPointerException e){}
 
         Account sessionAccount = MainActivity.cookies;
-        TextView nameAccount = findViewById(R.id.Name);
-        TextView emailAccount = findViewById(R.id.Email);
+        TextView nameAccount = findViewById(R.id.NameAboutMe);
+        TextView emailAccount = findViewById(R.id.EmailAboutMe);
         Button aboutRegisterRenter = findViewById(R.id.aboutme_registerRenter);
 
         //Second Condition
-        nameInput = findViewById(R.id.NameRegisterRenter);
-        addressInput = findViewById(R.id.AddressRegisterRenter);
-        phoneNumberInput = findViewById(R.id.PhoneNumberRegis);
-        Button aboutRegister = findViewById(R.id.aboutme_register);
-        Button cancel = findViewById(R.id.aboutme_cancel);
-        Button topUpInput = findViewById(R.id.TopUpButton);
-        nominal = findViewById(R.id.Nominal);
-        about_balance = findViewById(R.id.Amount);
+        nameInput = findViewById(R.id.NameIsi);
+        addressInput = findViewById(R.id.AddressIsi);
+        phoneNumberInput = findViewById(R.id.PhoneNumberIsi);
+        Button aboutRegister = findViewById(R.id.ButtonRegisterRenterAboutMe);
+        Button cancel = findViewById(R.id.ButtonCancelAboutMe);
+        Button topUpInput = findViewById(R.id.topUpInput);
+        nominal = findViewById(R.id.Amount);
+        about_balance = findViewById(R.id.WalletAboutMe);
 
 
         //Third Condition
-        TextView nameRenter = findViewById(R.id.aboutme_textviewStore);
-        TextView addressRenter = findViewById(R.id.aboutme_textviewPlace);
-        TextView phoneNumberRenter = findViewById(R.id.aboutme_textviewNumber);
+        TextView nameRenter = findViewById(R.id.AboutMeName);
+        TextView addressRenter = findViewById(R.id.AboutMePlace);
+        TextView phoneNumberRenter = findViewById(R.id.AboutMePhoneNumber);
         dataCardView = findViewById(R.id.dataCardView);
         registerCardView = findViewById(R.id.registerCardView);
 
@@ -96,6 +96,9 @@ public class MainAboutMeActivity extends AppCompatActivity {
                     aboutRegister.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+//                            System.out.println(nameInput.getText().toString());
+//                            System.out.println(addressInput.getText().toString());
+//                            System.out.println(phoneNumberInput.getText().toString());
                             requestRenter();
                         }
                     });
@@ -172,9 +175,4 @@ public class MainAboutMeActivity extends AppCompatActivity {
         });
         return null;
     }
-
-
-
 }
-
-

@@ -59,10 +59,6 @@ public interface BaseApiService {
     Call<Boolean> topUpRequest(@Path("id") int id,
                                @Query("balance") double balance);
 
-    //PaymentController BaseApi
-//    @GET("payment/{id}")
-//    Call<Payment> getPayment(@Path("id") int id);
-//
     @POST("payment/create")
     Call<Payment> createPayment(@Query("buyerId") int buyerId,
                                 @Query("renterId") int renterId,

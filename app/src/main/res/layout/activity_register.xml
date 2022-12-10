@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/registeractivity"
+    android:background="@drawable/aboutmeactivity"
     tools:context=".RegisterActivity">
-
 
 
     <EditText
@@ -74,5 +73,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/CreateAccount"
+        android:layout_width="258dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="212dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Create Account"
+        android:textColor="#2B5288"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
