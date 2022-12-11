@@ -1,12 +1,14 @@
 package com.ShabrinaJSleepDN.jsleep_android.model;
 
+
 public enum Facility {
-    SwimmingPool,
+    WiFi,
+    Bathtub,
     Balcony,
+    AC,
     FitnessCenter,
     Refrigerator,
-    Wifi,
     Restaurant,
-    Bathtub,
-    AC
+    SwimmingPool
 }
+

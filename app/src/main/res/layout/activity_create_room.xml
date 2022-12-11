@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/createroomactivity"
+        tools:context=".MainAboutMeActivity">
+
+        <LinearLayout
+            android:id="@+id/CreateRoom_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <LinearLayout
+                android:id="@+id/CreateRoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/CreateRoomNameInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                tools:layout_editor_absoluteX="0dp">
+
+                <EditText
+                    android:id="@+id/NameCreateRoom"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:textColor="#2B5288"
+                    android:textColorHint="#2B5288"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="99dp"
+                    tools:layout_editor_absoluteY="477dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/CreateRoomPriceInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/RegisterRenterNameInputLayout"
+                tools:layout_editor_absoluteX="0dp">
+
+                <EditText
+                    android:id="@+id/PriceCreateRoom"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Price"
+                    android:inputType="number"
+                    android:textColor="#2B5288"
+                    android:textColorHint="#2B5288"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="99dp"
+                    tools:layout_editor_absoluteY="552dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/CreateRoomAddressInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#6C8EE3"
+                android:gravity="center"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/RegisterRenterAddressInputLayout"
+                tools:layout_editor_absoluteX="0dp">
+
+                <EditText
+                    android:id="@+id/AddressCreateRoom"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Address"
+                    android:inputType="textPersonName"
+                    android:textColor="#2B5288"
+                    android:textColorHint="#3F51B5"
+                    android:textSize="20sp"
+                    android:visibility="visible"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="99dp"
+                    tools:layout_editor_absoluteY="617dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/CreateRoomSizeInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/RegisterRenterNameInputLayout"
+                tools:layout_editor_absoluteX="0dp">
+
+                <EditText
+                    android:id="@+id/sizeCreateRoom"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Size"
+                    android:inputType="number"
+                    android:textColor="#03050C"
+                    android:textColorHint="#3F51B5"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="99dp"
+                    tools:layout_editor_absoluteY="552dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Facility_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="64dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/CreateRoom_Layout"
+            tools:layout_editor_absoluteX="0dp">
+
+            <LinearLayout
+                android:id="@+id/CreateFacility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/CheckBoox1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/CheckBox_Row1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp">
+
+                    <CheckBox
+                        android:id="@+id/AC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="AC"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/Refrigerator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Refrigerator"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/Wifi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="WiFi"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/CheckBox_Row2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp">
+
+                    <CheckBox
+                        android:id="@+id/Bathub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Bathub"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/Balcony"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Balcony"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/Resto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Restaurant"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/CheckBox_Row3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxSwimmingPool"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Swimming Pool"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/Fitness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="Fitness Center"
+                        android:textColor="#2B5288"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/City_Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:id="@+id/CreateFacilityCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:text="City"
+                    android:textColor="#2B5288"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="56dp"
+                    tools:layout_editor_absoluteY="157dp" />
+
+
+                <Spinner
+                    android:id="@+id/SpinnerCity"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginRight="56dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/teal_200"
+                    android:textSize="20sp"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/BedType_Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                tools:layout_editor_absoluteX="16dp">
+
+                <TextView
+                    android:id="@+id/BedTypeCreateRoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:text="Bed Type"
+                    android:textColor="#2B5288"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="56dp"
+                    tools:layout_editor_absoluteY="208dp" />
+
+                <Spinner
+                    android:id="@+id/SpinnerBed"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="41dp"
+                    android:layout_marginRight="56dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/teal_200"
+                    android:gravity="right"
+                    android:textColor="#2B5288"
+                    android:textSize="20sp"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Button_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/Facility_Layout"
+            tools:layout_editor_absoluteX="0dp">
+
+            <Button
+                android:id="@+id/Button_CreateRoom"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:background="#EFB876"
+                android:backgroundTint="#A5CCC9"
+                android:text="Create"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FDFCFC" />
+
+            <Button
+                android:id="@+id/Cancel_CreateRoom"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:background="#EFB876"
+                android:backgroundTint="#EFB876"
+                android:text="Cancel"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FAF9F9" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

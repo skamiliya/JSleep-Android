@@ -18,147 +18,170 @@ import com.ShabrinaJSleepDN.jsleep_android.model.Renter;
 import com.ShabrinaJSleepDN.jsleep_android.request.BaseApiService;
 import com.ShabrinaJSleepDN.jsleep_android.request.UtilsApi;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+@SuppressLint("MissingInflatedId")
 public class MainAboutMeActivity extends AppCompatActivity {
-    Context mContext;
     BaseApiService mApiService;
-    TextView name, email, balance;
+    Context mContext;
+    TextView about_balance, nominal;
+    EditText nameInput, addressInput, phoneNumberInput;
+    CardView registerCardView,dataCardView;
+    Button topUpInput;
+//    Handler mHandler;
 
-    Button RegisterRenterButton;
-    CardView RegisterButtonCard;Button RegisterRenterConfirmation, RegisterRenterCancel;
-
-    CardView RenterRegistrationCard;TextView RenterName, RenterAddress, RenterPhoneNumber;
-
-    CardView RegisterDetailCard;TextView RenterNameFill, AddressFill, PhoneNumberFill;
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);setContentView(R.layout.activity_main_about_me);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_about_me);
+
+        try {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
+        Account sessionAccount = MainActivity.cookies;
+        TextView nameAccount = findViewById(R.id.about_name);
+        TextView emailAccount = findViewById(R.id.about_email);
+        Button aboutRegisterRenter = findViewById(R.id.aboutme_registerRenter);
+
+        //Second Condition
+        nameInput = findViewById(R.id.aboutme_name2);
+        addressInput = findViewById(R.id.aboutme_address);
+        phoneNumberInput = findViewById(R.id.aboutme_phoneNumber);
+        Button aboutRegister = findViewById(R.id.aboutme_register);
+        Button cancel = findViewById(R.id.aboutme_cancel);
+        Button topUpInput = findViewById(R.id.topUpInput);
+        nominal = findViewById(R.id.nominal);
+        about_balance = findViewById(R.id.about_balance);
+
+
+        //Third Condition
+        TextView nameRenter = findViewById(R.id.aboutme_textviewStore);
+        TextView addressRenter = findViewById(R.id.aboutme_textviewPlace);
+        TextView phoneNumberRenter = findViewById(R.id.aboutme_textviewNumber);
+        dataCardView = findViewById(R.id.dataCardView);
+        registerCardView = findViewById(R.id.registerCardView);
+
+        nameAccount.setText(sessionAccount.name);
+        emailAccount.setText(sessionAccount.email);
+        about_balance.setText(Double.toString(sessionAccount.balance));
+
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        name = findViewById(R.id.textViewNameIsi);
-        email = findViewById(R.id.textViewEmailsi);
-        balance = findViewById(R.id.textViewBalanceIsi);
+        topUpInput.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                topUpAccount();
+            }
+        });
+        registerCardView.setVisibility(View.INVISIBLE);
+        dataCardView.setVisibility(View.INVISIBLE);
 
-        if (balance == null)
-        {
-            balance.setText("0");
-        }
-
-        name.setText(MainActivity.cookies.name);
-        email.setText(MainActivity.cookies.email);
-        balance.setText(String.valueOf(MainActivity.cookies.balance));
-
-        RegisterRenterButton = findViewById(R.id.registerRenterButton);
-        //Second Condition
-        EditText RegisterRenterName = findViewById(R.id.NameRegisterRenter);
-        EditText RegisterRenterAddress = findViewById(R.id.AddressRegisterRenter);
-        EditText PhoneNumberAccount = findViewById(R.id.PhoneNumberRegisterRenter);
-        Button RegistAccept = findViewById(R.id.ButtonRegister);
-        Button RegistCancel = findViewById(R.id.ButtonCancel);
-
-        CardView CardViewRegister = findViewById(R.id.RegisterDetail);
-        CardView CardViewAccount = findViewById(R.id.RegisterRenterCard);
-
-        //Third Condition
-        TextView NameInput = findViewById(R.id.NameIsi);
-        TextView AddressInput = findViewById(R.id.AlamatIsi);
-        TextView PhoneInput = findViewById(R.id.PhoneNumberIsi);
-
-
-//        RegisterButtonCard = findViewById(R.id.RegisterRenterCard);
-//        RegisterRenterConfirmation = findViewById(R.id.ButtonRegister);
-//        RegisterRenterCancel = findViewById(R.id.ButtonCancel);
-//        RenterRegistrationCard = findViewById(R.id.RegisterRenterCard);
-//        RenterName = findViewById(R.id.NameRegisterRenter);
-//        RenterAddress = findViewById(R.id.AddressRegisterRenter);
-//        RenterPhoneNumber = findViewById(R.id.PhoneNumberRegisterRenter);
-//        RegisterDetailCard = findViewById(R.id.RegisterRenterDetail);
-//        RenterNameFill = findViewById(R.id.NameRegisterRenter);
-//        AddressFill = findViewById(R.id.AddressRegisterRenter);
-//        PhoneNumberFill = findViewById(R.id.PhoneNumberRegisterRenter);
-
-        CardViewRegister.setVisibility(CardView.INVISIBLE);
-        CardViewAccount.setVisibility(CardView.INVISIBLE);
-
-        if (MainActivity.cookies.renter == null)
-        {
-//            CardViewRegister.setVisibility(CardView.INVISIBLE);
-//            CardViewAccount.setVisibility(CardView.INVISIBLE);
-
-            RegisterRenterButton.setOnClickListener(new View.OnClickListener()
-            {
+        if (MainActivity.cookies.renter == null) {
+            dataCardView.setVisibility(View.INVISIBLE);
+            registerCardView.setVisibility(View.INVISIBLE);
+            aboutRegisterRenter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    RegisterRenterButton.setVisibility(Button.INVISIBLE);
-                    CardViewRegister.setVisibility(CardView.VISIBLE);
-                    CardViewAccount.setVisibility(CardView.INVISIBLE);
-
-                    RegistAccept.setOnClickListener(new View.OnClickListener()
-                    {
+                    aboutRegisterRenter.setVisibility(View.INVISIBLE); //Button menghilang
+                    registerCardView.setVisibility(View.VISIBLE);
+                    dataCardView.setVisibility(View.INVISIBLE);
+                    aboutRegister.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            System.out.println("hahaha");
-
-                            Renter renter = requestRenter(MainActivity.cookies.id, RegisterRenterName.getText().toString(),
-                                    RegisterRenterAddress.getText().toString(), PhoneNumberAccount.getText().toString());
-
-//                          Intent move = new Intent(MainAboutMeActivity.this, MainAboutMeActivity.class);
-//                            startActivity(move);
+//                            System.out.println(nameInput.getText().toString());
+//                            System.out.println(addressInput.getText().toString());
+//                            System.out.println(phoneNumberInput.getText().toString());
+                            requestRenter();
                         }
-
                     });
-                    RegistCancel.setOnClickListener(new View.OnClickListener() {
-
+                    cancel.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            CardViewRegister.setVisibility(CardView.INVISIBLE);
-                            CardViewAccount.setVisibility(CardView.INVISIBLE);
+                            aboutRegisterRenter.setVisibility(View.VISIBLE); //Button muncul
+                            registerCardView.setVisibility(View.INVISIBLE);
                         }
                     });
                 }
             });
+        }
 
-        } else {
-            RegisterRenterButton.setVisibility(Button.INVISIBLE);
-            CardViewRegister.setVisibility(CardView.INVISIBLE);
-            CardViewAccount.setVisibility(CardView.VISIBLE);
+        if(MainActivity.cookies.renter != null){
+            aboutRegisterRenter.setVisibility(View.INVISIBLE);
+            registerCardView.setVisibility(View.INVISIBLE);
+            dataCardView.setVisibility(View.VISIBLE);
 
-            NameInput.setText(MainActivity.cookies.renter.username);
-            AddressInput.setText(MainActivity.cookies.renter.address);
-            PhoneInput.setText(MainActivity.cookies.renter.phoneNumber);
+            nameRenter.setText(MainActivity.cookies.renter.username);
+            addressRenter.setText(MainActivity.cookies.renter.address);
+            phoneNumberRenter.setText(String.valueOf(MainActivity.cookies.renter.phoneNumber));
         }
     }
 
-    protected Renter requestRenter(int id, String username, String address, String phone) {
-        System.out.println("hehehhehe");
-        mApiService.registerRenter(id, username, address, phone).enqueue(new Callback<Renter>() {
+    protected boolean topUpAccount() {
+        mApiService.topUpRequest(
+                MainActivity.cookies.id,
+                Double.parseDouble(nominal.getText().toString())
+        ).enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful()) {
+//                    topUp = response.body();
+                    Toast.makeText(mContext, "Top Up Successful!", Toast.LENGTH_SHORT).show();
+                    System.out.println(nominal.getText().toString());
+                    about_balance.setText(NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(MainActivity.cookies.balance + Double.parseDouble(nominal.getText().toString())));
+//                    sessionAccount.balance+= Double.parseDouble(nominal.getText().toString());
+                    MainActivity.cookies.balance += Double.parseDouble(nominal.getText().toString());
+                    nominal.setText("");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                System.out.println(t.toString());
+                Toast.makeText(mContext, "Top Up Failed!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return false;
+    }
+
+    protected Renter requestRenter(){
+        mApiService.registerRenterRequest(
+                MainActivity.cookies.id,
+                nameInput.getText().toString(),
+                addressInput.getText().toString(),
+                phoneNumberInput.getText().toString()).enqueue(new Callback<Renter>() {
             @Override
             public void onResponse(Call<Renter> call, Response<Renter> response) {
-
-                if (response.isSuccessful()) {
-                    Renter renter;
-                    renter = response.body();
-                    MainActivity.cookies.renter = renter;
-                    System.out.println("Renter Registered Success");
-                    Intent move = new Intent(MainAboutMeActivity.this, MainAboutMeActivity.class);
+                if(response.isSuccessful()){
+                    MainActivity.cookies.renter = response.body();
+                    Intent move = new Intent(MainAboutMeActivity.this, MainActivity.class);
                     startActivity(move);
-                    Toast.makeText(mContext, "Registered Renter", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(mContext, "Register Renter Successfull", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Renter> call, Throwable t) {
                 System.out.println(t.toString());
-                Toast.makeText(mContext, "Failed to Register!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Register Renter Failed", Toast.LENGTH_SHORT).show();
             }
         });
         return null;
     }
+
+
+
 }
+
+

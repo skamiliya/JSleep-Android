@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bookingactivity"
+    tools:context=".BookingActivity">
+
+    <Button
+        android:id="@+id/ButtonBook"
+        android:layout_width="322dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="75dp"
+        android:backgroundTint="#EFB876"
+        android:text="BOOK"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonPay"
+        android:layout_width="322dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="96dp"
+        android:backgroundTint="#2B5288"
+        android:text="Pay"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonCancel"
+        android:layout_width="322dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2B5288"
+        android:text="Cancel"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/DatePickerTo"
+        style="?android:spinnerStyle"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="28dp"
+        android:layout_weight="1"
+        android:text="JAN 01 2022"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BalanceWallet" />
+
+    <Button
+        android:id="@+id/DatePickerFrom"
+        style="?android:spinnerStyle"
+        android:layout_width="139dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="66dp"
+        android:layout_weight="1"
+        android:text="DEC 31 2022"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BalanceWallet" />
+
+    <TextView
+        android:id="@+id/Price"
+        android:layout_width="271dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="52dp"
+        android:layout_weight="1"
+        android:text="Rp.500.000"
+        android:textAlignment="viewEnd"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DatePickerTo">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/BalanceWallet"
+        android:layout_width="248dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="72dp"
+        android:layout_weight="1"
+        android:text="Rp.0"
+        android:textAlignment="viewEnd"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,8 +31,8 @@ public class LoginActivity extends AppCompatActivity {
 
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        TextView register = findViewById(R.id.textView3);
-        Button login = findViewById(R.id.button);
+        TextView register = findViewById(R.id.RegisterNow);
+        Button login = findViewById(R.id.buttonLogin);
         username = findViewById(R.id.Username);
         password = findViewById(R.id.Password);
 

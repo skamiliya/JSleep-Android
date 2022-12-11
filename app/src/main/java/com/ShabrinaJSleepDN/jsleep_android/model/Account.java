@@ -7,10 +7,6 @@ public class Account extends Serializable{
     public String email;
     public double balance;
 
-    public Account(int id) {
-        super(id);
-    }
-
     @Override
     public String toString(){
         return "Account{" +
