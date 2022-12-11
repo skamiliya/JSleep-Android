@@ -25,10 +25,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 @SuppressLint("MissingInflatedId")
 public class MainAboutMeActivity extends AppCompatActivity {
     BaseApiService mApiService;
@@ -50,19 +46,19 @@ public class MainAboutMeActivity extends AppCompatActivity {
         catch (NullPointerException e){}
 
         Account sessionAccount = MainActivity.cookies;
-        TextView nameAccount = findViewById(R.id.about_name);
-        TextView emailAccount = findViewById(R.id.about_email);
+        TextView nameAccount = findViewById(R.id.Name);
+        TextView emailAccount = findViewById(R.id.Email);
         Button aboutRegisterRenter = findViewById(R.id.aboutme_registerRenter);
 
         //Second Condition
-        nameInput = findViewById(R.id.aboutme_name2);
-        addressInput = findViewById(R.id.aboutme_address);
-        phoneNumberInput = findViewById(R.id.aboutme_phoneNumber);
+        nameInput = findViewById(R.id.NameRegisterRenter);
+        addressInput = findViewById(R.id.AddressRegisterRenter);
+        phoneNumberInput = findViewById(R.id.PhoneNumberRegis);
         Button aboutRegister = findViewById(R.id.aboutme_register);
         Button cancel = findViewById(R.id.aboutme_cancel);
-        Button topUpInput = findViewById(R.id.topUpInput);
-        nominal = findViewById(R.id.nominal);
-        about_balance = findViewById(R.id.about_balance);
+        Button topUpInput = findViewById(R.id.TopUpButton);
+        nominal = findViewById(R.id.Nominal);
+        about_balance = findViewById(R.id.Amount);
 
 
         //Third Condition
@@ -100,9 +96,6 @@ public class MainAboutMeActivity extends AppCompatActivity {
                     aboutRegister.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-//                            System.out.println(nameInput.getText().toString());
-//                            System.out.println(addressInput.getText().toString());
-//                            System.out.println(phoneNumberInput.getText().toString());
                             requestRenter();
                         }
                     });

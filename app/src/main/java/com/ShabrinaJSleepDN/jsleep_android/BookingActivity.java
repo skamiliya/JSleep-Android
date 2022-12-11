@@ -37,7 +37,7 @@ public class BookingActivity extends AppCompatActivity {
     Context mContext;
     private DatePickerDialog datePickerDialog;private Button dateButtonFrom, dateButtonTo, saveBookButton, payButton, cancelButton;private int ind = 0;
     protected static String from, to, fromSec, toSec;protected static String PayAmount;
-    double roomPrice = DetailRoomActivity.sessionRoom.price.price;double accountBalance;
+    double roomPrice = DetailRoomActivity.RoomSession.price.price;double accountBalance;
     long DaysNum = 0;
 
     protected TextView priceText; protected static String priceCurrency;
@@ -64,8 +64,8 @@ public class BookingActivity extends AppCompatActivity {
 
         accountBalance = MainActivity.cookies.balance;
 
-        if((DetailRoomActivity.currentPayment != null) && (DetailRoomActivity.currentPayment.status == Invoice.PaymentStatus.WAITING)){
-            dateButtonFrom.setText(simpleDateFormat(DetailRoomActivity.currentPayment.from));dateButtonTo.setText(simpleDateFormat(DetailRoomActivity.currentPayment.to));
+        if((DetailRoomActivity.paymentCurrent != null) && (DetailRoomActivity.paymentCurrent.status == Invoice.PaymentStatus.WAITING)){
+            dateButtonFrom.setText(simpleDateFormat(DetailRoomActivity.paymentCurrent.from));dateButtonTo.setText(simpleDateFormat(DetailRoomActivity.paymentCurrent.to));
             dateButtonTo.setEnabled(false);dateButtonFrom.setEnabled(false);
 
             //Update Balance
@@ -73,7 +73,7 @@ public class BookingActivity extends AppCompatActivity {
             balanceText.setText(balanceCurrency);
 
             priceText = findViewById(R.id.Price);
-            priceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(roomPrice * simpleCalcDays(DetailRoomActivity.currentPayment.from, DetailRoomActivity.currentPayment.to));
+            priceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(roomPrice * simpleCalcDays(DetailRoomActivity.paymentCurrent.from, DetailRoomActivity.paymentCurrent.to));
             PayAmount = priceCurrency;priceText.setText(priceCurrency);
 
             saveBookButton.setVisibility(Button.GONE);payButton.setVisibility(Button.VISIBLE);cancelButton.setVisibility(Button.VISIBLE);
@@ -82,14 +82,14 @@ public class BookingActivity extends AppCompatActivity {
             payButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    requestAcceptPayment(DetailRoomActivity.currentPayment.id);Intent move = new Intent(BookingActivity.this, SuccessPaymentActivity.class);
+                    requestAcceptPayment(DetailRoomActivity.paymentCurrent.id);Intent move = new Intent(BookingActivity.this, SuccessPaymentActivity.class);
                     startActivity(move);
                 }});
 
             cancelButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    requestCancelPayment(DetailRoomActivity.currentPayment.id);Intent move = new Intent(BookingActivity.this, CancelPaymentActivity.class);startActivity(move);
+                    requestCancelPayment(DetailRoomActivity.paymentCurrent.id);Intent move = new Intent(BookingActivity.this, CancelPaymentActivity.class);startActivity(move);
                 }
             });}
 
@@ -120,7 +120,7 @@ public class BookingActivity extends AppCompatActivity {
                 DaysNum = calcDays(from, to);
                 requestBooking(
                         MainActivity.cookies.id, MainActivity.cookies.renter.id,
-                        DetailRoomActivity.sessionRoom.id,
+                        DetailRoomActivity.RoomSession.id,
                         formatDate(from), formatDate(to));
             });
 
